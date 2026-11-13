@@ -1,1 +1,506 @@
 
+<!DOCTYPE html>
+<html lang="hi">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+
+<title>कथा सागर | पुराण, धर्म और संस्कृति</title>
+
+<style>
+* {
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
+}
+
+body {
+  font-family: "Noto Sans Devanagari", sans-serif;
+  background: #f5ecdc;
+  color: #4b251c;
+}
+
+/* HEADER */
+
+header {
+  background: #fffaf0;
+  padding: 22px 4%;
+  display: flex;
+  align-items: center;
+  gap: 20px;
+  border-bottom: 4px solid #dfbd73;
+}
+
+.logo {
+  width: 75px;
+  height: 75px;
+  border: 3px solid #a50020;
+  border-radius: 50%;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  color: #a50020;
+  font-size: 43px;
+  flex-shrink: 0;
+}
+
+.brand h1 {
+  color: #92001b;
+  font-size: 35px;
+}
+
+.brand p {
+  color: #96724e;
+  font-size: 17px;
+  margin-top: 8px;
+}
+
+/* NAVIGATION BAR */
+
+nav {
+  background: #a50020;
+  min-height: 48px;
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  padding: 5px 4%;
+}
+
+.nav-left {
+  display: flex;
+  align-items: center;
+  gap: 20px;
+}
+
+.nav-right {
+  display: flex;
+  align-items: center;
+}
+
+nav button {
+  background: transparent;
+  border: none;
+  color: white;
+  font-size: 16px;
+  cursor: pointer;
+  padding: 8px 5px;
+}
+
+nav button:hover {
+  color: #ffdb85;
+}
+
+/* SEARCH */
+
+#searchBox {
+  display: none;
+  background: #fffaf0;
+  padding: 13px 4%;
+  border-bottom: 1px solid #dfbd73;
+}
+
+#searchBox input {
+  width: 100%;
+  padding: 12px;
+  border: 1px solid #c8a46b;
+  border-radius: 5px;
+  font-size: 16px;
+  outline: none;
+}
+
+/* SIDEBAR */
+
+.sidebar {
+  position: fixed;
+  top: 0;
+  left: -290px;
+  width: 270px;
+  height: 100vh;
+  background: #fffaf0;
+  z-index: 100;
+  box-shadow: 4px 0 15px #0003;
+  transition: left .35s ease;
+  padding: 25px 20px;
+  overflow-y: auto;
+}
+
+.sidebar.active {
+  left: 0;
+}
+
+.sidebar h2 {
+  color: #a50020;
+  margin: 25px 0;
+  font-size: 23px;
+}
+
+.sidebar a {
+  display: block;
+  text-decoration: none;
+  color: #582d20;
+  padding: 15px 5px;
+  border-bottom: 1px solid #e7d4b2;
+  font-size: 18px;
+}
+
+.sidebar a:hover {
+  color: #a50020;
+}
+
+.close {
+  float: right;
+  color: #a50020;
+  font-size: 26px;
+  cursor: pointer;
+}
+
+/* OVERLAY */
+
+.overlay {
+  display: none;
+  position: fixed;
+  inset: 0;
+  background: #0006;
+  z-index: 99;
+}
+
+.overlay.active {
+  display: block;
+}
+
+/* MAIN CONTENT */
+
+main {
+  max-width: 950px;
+  margin: 30px auto;
+  padding: 15px;
+}
+
+.content {
+  background: #fffaf0;
+  border: 1px solid #d8b982;
+  padding: 22px;
+  text-align: center;
+  outline: 1px solid #dfc18b;
+  outline-offset: -8px;
+}
+
+.content h2 {
+  color: #a50020;
+  font-size: 25px;
+  margin: 12px 0 30px;
+}
+
+.book-title {
+  background: #b50020;
+  color: white;
+  padding: 30px 10px;
+  font-size: 36px;
+  margin-bottom: 30px;
+}
+
+.author {
+  color: #a52b2b;
+  font-size: 25px;
+  margin-bottom: 35px;
+}
+
+.book-image {
+  width: 100%;
+  max-width: 650px;
+  display: block;
+  margin: auto;
+  border: 5px double #a50020;
+}
+
+.other-section {
+  background: #fffaf0;
+  border: 1px solid #d8b982;
+  padding: 30px;
+  text-align: center;
+  margin-top: 25px;
+}
+
+.other-section h2 {
+  color: #a50020;
+  margin-bottom: 15px;
+}
+
+/* FOOTER */
+
+footer {
+  background: #870019;
+  color: white;
+  text-align: center;
+  padding: 20px;
+  margin-top: 35px;
+}
+
+/* MOBILE */
+
+@media(max-width:600px) {
+
+  header {
+    padding: 20px 4%;
+    gap: 13px;
+  }
+
+  .logo {
+    width: 65px;
+    height: 65px;
+    font-size: 35px;
+  }
+
+  .brand h1 {
+    font-size: 29px;
+  }
+
+  .brand p {
+    font-size: 14px;
+  }
+
+  .nav-left {
+    gap: 9px;
+  }
+
+  nav {
+    padding: 5px 8px;
+  }
+
+  nav button {
+    font-size: 13px;
+    padding: 8px 3px;
+  }
+
+  .content h2 {
+    font-size: 19px;
+  }
+
+  .book-title {
+    font-size: 27px;
+  }
+
+  .author {
+    font-size: 20px;
+  }
+}
+</style>
+</head>
+
+<body>
+
+<!-- HEADER -->
+
+<header>
+  <div class="logo">ॐ</div>
+
+  <div class="brand">
+    <h1>कथा सागर</h1>
+    <p>पुराण • धर्म • संस्कृति</p>
+  </div>
+</header>
+
+<!-- NAVIGATION -->
+
+<nav>
+
+  <div class="nav-left">
+
+    <button onclick="toggleMenu()">
+      ☰ Menu
+    </button>
+
+    <button onclick="goTo('contact')">
+      Contact
+    </button>
+
+    <button onclick="goTo('about')">
+      About
+    </button>
+
+  </div>
+
+  <div class="nav-right">
+
+    <button onclick="toggleSearch()">
+      ⌕ Search
+    </button>
+
+  </div>
+
+</nav>
+
+<!-- SEARCH BOX -->
+
+<div id="searchBox">
+
+  <input
+    type="search"
+    id="searchInput"
+    placeholder="कथा, पुराण या विषय खोजें..."
+    oninput="searchContent()"
+  >
+
+</div>
+
+<!-- OVERLAY -->
+
+<div
+  class="overlay"
+  id="overlay"
+  onclick="toggleMenu()">
+</div>
+
+<!-- SIDEBAR -->
+
+<aside class="sidebar" id="sidebar">
+
+  <span class="close" onclick="toggleMenu()">✕</span>
+
+  <h2>कथा सागर</h2>
+
+  <a href="#katha" onclick="closeMenu()">कथा संग्रह</a>
+
+  <a href="#vrat" onclick="closeMenu()">व्रत एवं त्योहार</a>
+
+  <a href="#mantra" onclick="closeMenu()">मंत्र संग्रह</a>
+
+  <a href="#sahastra" onclick="closeMenu()">सहस्रनामावली</a>
+
+  <a href="#bhajan" onclick="closeMenu()">भजन संग्रह</a>
+
+  <a href="#about" onclick="closeMenu()">हमारे बारे में</a>
+
+  <a href="#contact" onclick="closeMenu()">संपर्क करें</a>
+
+</aside>
+
+<!-- MAIN -->
+
+<main>
+
+  <section class="content" id="katha">
+
+    <h2>
+      प्राचीन भारतीय ज्ञान और संस्कृति का अमूल्य ग्रंथ
+    </h2>
+
+    <div class="book-title">
+      मत्स्य महापुराण
+    </div>
+
+    <p class="author">
+      रचयिता : महर्षि वेदव्यास
+    </p>
+
+    <img
+      class="book-image"
+      src="matsya-mahapuran.jpg"
+      alt="मत्स्य महापुराण"
+    >
+
+  </section>
+
+  <section class="other-section" id="vrat">
+    <h2>व्रत एवं त्योहार</h2>
+    <p>भारतीय व्रत एवं त्योहारों का संग्रह।</p>
+  </section>
+
+  <section class="other-section" id="mantra">
+    <h2>मंत्र संग्रह</h2>
+    <p>पवित्र मंत्रों का संग्रह।</p>
+  </section>
+
+  <section class="other-section" id="sahastra">
+    <h2>सहस्रनामावली</h2>
+    <p>भगवान के पवित्र सहस्रनाम।</p>
+  </section>
+
+  <section class="other-section" id="bhajan">
+    <h2>भजन संग्रह</h2>
+    <p>भक्ति भजनों का संग्रह।</p>
+  </section>
+
+  <section class="other-section" id="about">
+    <h2>हमारे बारे में</h2>
+    <p>कथा सागर में आपका स्वागत है।</p>
+  </section>
+
+  <section class="other-section" id="contact">
+    <h2>संपर्क करें</h2>
+    <p>कथा सागर से जुड़ने के लिए आपका स्वागत है।</p>
+  </section>
+
+</main>
+
+<footer>
+  © 2026 कथा सागर | सभी अधिकार सुरक्षित
+</footer>
+
+<!-- JAVASCRIPT -->
+
+<script>
+
+function toggleMenu() {
+
+  document.getElementById("sidebar")
+    .classList.toggle("active");
+
+  document.getElementById("overlay")
+    .classList.toggle("active");
+
+}
+
+function closeMenu() {
+
+  document.getElementById("sidebar")
+    .classList.remove("active");
+
+  document.getElementById("overlay")
+    .classList.remove("active");
+
+}
+
+function toggleSearch() {
+
+  let box = document.getElementById("searchBox");
+
+  box.style.display =
+    box.style.display === "block"
+    ? "none"
+    : "block";
+
+  if(box.style.display === "block") {
+    document.getElementById("searchInput").focus();
+  }
+
+}
+
+function goTo(id) {
+
+  document.getElementById(id).scrollIntoView({
+    behavior: "smooth"
+  });
+
+}
+
+function searchContent() {
+
+  let value = document.getElementById("searchInput")
+    .value.toLowerCase().trim();
+
+  document.querySelectorAll("main section").forEach(section => {
+
+    let match = section.innerText.toLowerCase().includes(value);
+
+    section.style.display = match ? "block" : "none";
+
+  });
+
+}
+
+</script>
+
+</body>
+</html>
+
